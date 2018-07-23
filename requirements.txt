@@ -1,0 +1,9 @@
+django==1.11
+djangorestframework
+django-admin-tools
+django-admin-tools-stats
+django-reversion
+psycopg2-binary
+pygments==2.2.0
+django-betterforms==1.1.4
+django-prometheus

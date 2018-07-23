@@ -1,0 +1,62 @@
+.class-header-logo {
+    width: 30px;
+    height: 30px;
+}
+.htlfndr-top-header .navbar.navbar-default {
+    background-color: white;
+}
+.htlfndr-logo-text, .navbar.navbar-default.htlfndr-blue-hover-nav .navbar-nav>li>a {
+    color: black;
+}
+.htlfndr-custom-select.htlfndr-language .htlfndr-dropdown-select {
+    background-color: white;
+}
+.htlfndr-dropdown-select>span {
+    color: black;
+}
+.htlfndr-custom-select.htlfndr-language li[data-value="vina"]:before, .htlfndr-custom-select.htlfndr-language .vina:before {
+    background-image: url("../images/icon-flag-vina.png")
+}
+.main-slider-image {
+    width: 1824px;
+    height: 565px;
+}
+.htlfndr-custom-select.htlfndr-language .htlfndr-dropdown-select-ul>li{
+    color: black;
+    background-color: white;
+}
+.main-content-image {
+    width: 360px;
+    height: 295px;
+}
+.main-support-image {
+    width: 370px;
+    height: 311px;
+}
+.htlfndr-visitor-card .visitor-avatar img {
+    width: 60px;
+    height: 60px;
+}
+.htlfndr-the-excerpt {
+    color: white;
+}
+.htlfndr-top-destination-block .htlfndr-service {
+    padding-left: 0;
+}
+.htlfndr-footer .htlfndr-logo-text {
+    margin-left: 0;
+    color: white;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+#htlfndr-edit-card .htlfndr-content-card form input, #htlfndr-sing-in .htlfndr-content-card form input, #htlfndr-sing-up .htlfndr-content-card form input, #htlfndr-forgot-password .htlfndr-content-card form input, .htlfndr-sing-in-page .htlfndr-content-card form input, .htlfndr-sing-up-page .htlfndr-content-card form input, #htlfndr-add-card .htlfndr-content-card form input {
+    color: black;
+}
+@media(min-width:1200px) {
+  .htlfndr-form-left-side {
+    width: 100%;
+  }
+@media(min-width:768px) {
+  .htlfndr-form-left-side {
+    width: 100%;
+  }

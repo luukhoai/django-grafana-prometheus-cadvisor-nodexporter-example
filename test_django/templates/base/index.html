@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<title>Home Page - Hotel Finder</title>
+
+	{% load static %}
+	<link rel="shortcut icon" type="image/png" href="{% static 'base/images/logo.png' %}"/>
+	<!-- Bootstrap -->
+	<link href="{% static 'base/css/bootstrap.min.css' %}" rel="stylesheet" />
+	<!-- Main styles -->
+	<link href="{% static 'base/css/style.css' %}" rel="stylesheet" />
+	<!--<link rel="stylesheet/less" href="css/style.less" />-->
+	<link href="{% static 'base/css/dmk.css' %}" rel="stylesheet"/>
+	<!-- IE styles -->
+	<link href="{% static 'base/css/ie.css' %}" rel="stylesheet" />
+	<!-- Font Awesome -->
+	<link href="{% static 'base/css/font-awesome.min.css' %}" rel="stylesheet" />
+	<!-- OWL Carousel -->
+	<link href="{% static 'base/css/owl.carousel.css' %}" rel="stylesheet" />
+	<!-- Jquery UI -->
+	<link href="{% static 'base/css/jquery-ui.css' %}" rel="stylesheet" />
+
+	<link href="{% static 'base/css/test_django.css' %}" rel="stylesheet" />
+
+	{% block css %}
+	{% endblock %}
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	</head>
+	<body>
+		<div class="htlfndr-loader-overlay"></div>
+
+		<div class="htlfndr-wrapper">
+			{% include 'base/header.html' %}
+			{% block body %}
+			{% endblock %}
+		</div>
+		{% include 'base/footer.html' %}
+
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="{% static 'base/js/jquery-1.11.3.min.js' %}"></script>
+		<!-- Include Jquery UI script file -->
+		<script src="{% static 'base/js/jquery-ui.min.js' %}"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<!-- Include Query UI Touch Punch is a small hack that enables the use
+		 of touch events on sites using the jQuery UI user interface library. -->
+		<script src="{% static 'base/js/jquery.ui.touch-punch.min.js' %}"></script>
+		<script src="{% static 'base/js/bootstrap.min.js' %}"></script>
+		<!-- Include Owl Carousel script file -->
+		<script src="{% static 'base/js/owl.carousel.min.js' %}"></script>
+		<!-- Include main script file -->
+		<script src="{% static 'base/js/script.js' %}"></script>
+
+		<!--<script src="js/less.min.js" ></script> -->
+		{% block javascript %}
+		{% endblock %}
+	</body>
+</html>

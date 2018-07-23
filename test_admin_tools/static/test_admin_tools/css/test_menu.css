@@ -1,0 +1,7 @@
+#header ul#navigation-menu li a {
+    font-weight: bold;
+}
+
+#header ul#navigation-menu li ul li a {
+    font-weight: normal;
+}

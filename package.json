@@ -1,0 +1,29 @@
+{
+  "name": "test_django",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "flush": "python manage.py flush --no-input",
+    "e2e": "cypress open --project ./main/",
+    "build": "webpack --mode=production ./main/src/index.js --output ./main/static/main/js/main.js",
+    "react": "webpack --mode=production ./react_tutorials/tutorials.js --output ./react_tutorials/react_tutorial.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "cypress": "^3.0.2",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "weak-key": "^1.0.0",
+    "webpack": "^4.12.1",
+    "webpack-cli": "^3.0.8"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,14 @@
+{% load static %}
+{% load i18n %}
+{% block header %}
+<form id="login-form" action="/accounts/login" method="post">
+    {% csrf_token %}
+    <h4>username</h4>
+    {{ form.login_form.username}}
+    <h4>password</h4>
+    {{ form.login_form.password}}
+    <div class="clear">
+        <input type="submit" id="login-form-button" value="Login"/>
+    </div>
+</form>
+{% endblock %}
