@@ -11,7 +11,6 @@ services:
        - pgadmin
      ports:
        - "443:443"
-       - "5050:5050"
        - "80:80"
    app:
      build: .
@@ -51,6 +50,18 @@ services:
         POSTGRES_DB: django_test
         POSTRES_PASSWORD: k1h2o3a4i5
 
+   nginx_dashboard:
+      build: ./nginx_dashboard
+      image: "test-django-nginx-dashboard:latest"
+      restart: unless-stopped
+      ports:
+        - 5050:5050
+        - 3000:3000
+      links:
+        - grafana
+      depends_on:
+        - grafana
+
    prometheus:
       build: ./docker_prometheus
       image: "test-django-prometheus:latest"
@@ -66,7 +77,11 @@ services:
       links:
         - cadvisor:cadvisor
         - node-exporter:node-exporter
-        - app:app
+        - nginx:nginx
+      depends_on:
+        - cadvisor
+        - node-exporter
+        - nginx
 
    node-exporter:
       image: prom/node-exporter:latest
@@ -91,13 +106,15 @@ services:
 #        - 8080:8080
 
    grafana:
-      image: grafana/grafana:latest
-      container_name: monitoring_grafana
+      build: ./docker_grafana
+      image: "test-django-grafana:latest"
       restart: unless-stopped
       links:
         - prometheus:prometheus
-  #    volumes:
-  #      - ./data/grafana:/var/lib/grafana
+      depends_on:
+        - prometheus
+      volumes:
+        - /home/silverlight/Projects/test_django/grafana:/var/lib/grafana
       environment:
         - GF_SECURITY_ADMIN_PASSWORD=admin
         - GF_USERS_ALLOW_SIGN_UP=false
@@ -107,6 +124,7 @@ services:
         - GF_SMTP_USER=myadrress@gmail.com
         - GF_SMTP_PASSWORD=mypassword
         - GF_SMTP_FROM_ADDRESS=myaddress@gmail.com
-      ports:
-        - 3000:3000
+#      ports:
+#        - 3000:3000
+      user: "root"
 

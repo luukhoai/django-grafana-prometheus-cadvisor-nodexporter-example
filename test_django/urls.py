@@ -17,6 +17,8 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from main.views import MainIndexView
 from rest_framework.authtoken.views import obtain_auth_token
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -30,3 +32,5 @@ urlpatterns = [
     url(r'^api-token-auth/', obtain_auth_token),
     url(r'^prometheus/', include('django_prometheus.urls'))
 ]
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

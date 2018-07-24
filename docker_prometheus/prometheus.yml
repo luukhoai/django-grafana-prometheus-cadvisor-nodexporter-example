@@ -33,4 +33,4 @@ scrape_configs:
          # scheme defaults to 'http'.
 
     static_configs:
-      - targets: ['app:8000']
+      - targets: ['nginx:80']
